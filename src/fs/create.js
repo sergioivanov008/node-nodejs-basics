@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 const curFolder = 'files';
 const curFile = 'fresh.txt';
 const curContent = 'I am fresh and young';
+const ERR_MESSAGE = 'FS operation failed';
 
 const curFilePath = path.join(__dirname, curFolder, curFile);
 
@@ -17,7 +18,7 @@ const create = async () => {
             if (err) {
                 writeFile(curFilePath, curContent);
             } else {
-                throw new Error('FS operation failed');
+                throw new Error(ERR_MESSAGE);
             }
           });
 };
